@@ -20,7 +20,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'curl -u admin:admin -F file=@"aem-helloworld-content-0.0.2-SNAPSHOT.zip" -F name="aem-helloworld" -F force=true -F install=true http://aem:4502/crx/packmgr/service.jsp'
+                sh 'curl -u admin:admin -F file=~/.m2/repositories/com/shinesolutions/aem-helloworld-content/0.0.2-SNAPSHOT/aem-helloworld-content-0.0.2-SNAPSHOT.zip -F install=true http://localhost:4502/crx/packmgr/service.jsp'
                 sh 'ruby tests_spec.rb'
             }
         }
