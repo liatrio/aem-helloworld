@@ -8,7 +8,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'mvn clean install -B'
+                sh 'mvn install -PautoInstallPackage -Dpublish.crx.host=aem -Dpublish.crx.port=4502'
             }
         }
         stage ('Selenium') {
