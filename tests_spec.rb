@@ -8,7 +8,7 @@ describe 'Petlinic' do
     @headless.start
 
     @driver = Selenium::WebDriver.for :firefox
-    @driver.navigate.to 'http://aem:4502/content/helloworld/en/automation/component-testing/HelloKPWorld.html'
+    @driver.navigate.to 'http://localhost:4502/content/helloworld.html'
     @driver.manage.timeouts.implicit_wait = 30
   end
 
@@ -18,7 +18,7 @@ describe 'Petlinic' do
 
   describe 'when homepage is available' do
     it 'should show correct page title' do
-      assert @driver.title == 'PetClinic :: a Spring Framework demonstration'
+      assert @driver.title == 'Hello World'
     end
   end
 
