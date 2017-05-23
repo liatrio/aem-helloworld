@@ -15,7 +15,7 @@ pipeline {
             agent {
                 docker {
                     image 'liatrio/selenium-firefox'
-                    args '--network=plumbing_default'
+                    args '--network=demodeploymentpipeline_default'
                 }
             }
             steps {
