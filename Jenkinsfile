@@ -11,7 +11,7 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
-        stage (Selenium) {
+        stage ('Selenium') {
             agent {
                 docker {
                     image 'liatrio/selenium-firefox'
