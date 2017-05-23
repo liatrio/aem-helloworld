@@ -8,8 +8,11 @@ describe 'Petlinic' do
     @headless.start
 
     @driver = Selenium::WebDriver.for :firefox
-    @driver.navigate.to 'http://aem:4502/content/helloworld.html'
     @driver.manage.timeouts.implicit_wait = 30
+    @driver.navigate.to 'http://aem:4502/content/helloworld.html'
+    @driver.find_element(:id, 'username').send_keys('admin')
+    @driver.find_element(:id, 'password').send_keys('admin')
+    @driver.find_element(:id, 'submit-button').click
   end
 
   after do
