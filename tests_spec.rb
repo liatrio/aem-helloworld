@@ -18,6 +18,7 @@ describe 'Petlinic' do
 
   describe 'when homepage is available' do
     it 'should show correct page title' do
+      puts @driver.title
       assert @driver.title == 'Hello World'
     end
   end
