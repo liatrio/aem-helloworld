@@ -4,7 +4,7 @@ pipeline {
         stage ('Build') {
             agent {
                 docker {
-                    image 'alpine'
+                    image 'maven:3-jdk-8-onbuild-alpine'
                 }
             }
             steps {
