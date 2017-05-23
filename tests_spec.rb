@@ -8,7 +8,7 @@ describe 'Petlinic' do
     @headless.start
 
     @driver = Selenium::WebDriver.for :firefox
-    @driver.navigate.to 'http://localhost:4502/content/helloworld.html'
+    @driver.navigate.to 'http://aem:4502/content/helloworld.html'
     @driver.manage.timeouts.implicit_wait = 30
   end
 
