@@ -1,58 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <!-- ====================================================================== -->
-    <!-- P A R E N T P R O J E C T D E S C R I P T I O N -->
-    <!-- ====================================================================== -->
 
     <groupId>com.shinesolutions</groupId>
     <artifactId>aem-helloworld</artifactId>
     <version>0.0.2-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>AEM Hello World - Reactor Project</name>
-    <description>Maven Multimodule project for AEM Hello World.</description>
-    <url>https://github.com/shinesolutions/aem-helloworld</url>
-
-    <scm>
-      <connection>scm:git:git@github.com:shinesolutions/aem-helloworld.git</connection>
-      <developerConnection>scm:git:git@github.com:shinesolutions/aem-helloworld.git</developerConnection>
-      <url>https://github.com/shinesolutions/aem-helloworld</url>
-      <tag>HEAD</tag>
-    </scm>
-
-    <distributionManagement>
-      <repository>
-          <id>sonatype-release</id>
-          <name>Sonatype Release</name>
-          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
-      </repository>
-    </distributionManagement>
-
-    <licenses>
-      <license>
-          <name>Apache License, Version 2.0</name>
-          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-          <distribution>repo</distribution>
-      </license>
-    </licenses>
-
-    <developers>
-       <developer>
-           <name>Shine Solutions</name>
-           <email>opensource@shinesolutions.com</email>
-           <organization>Shine Solutions</organization>
-           <organizationUrl>http://shinesolutions.com</organizationUrl>
-       </developer>
-    </developers>
-
-    <prerequisites>
-        <maven>3.0.2</maven>
-    </prerequisites>
-
-    <!-- ====================================================================== -->
-    <!-- P R O P E R T I E S -->
-    <!-- ====================================================================== -->
     <properties>
         <crx.host>localhost</crx.host>
         <crx.port>4502</crx.port>
@@ -186,12 +140,6 @@
         </dependencies>
     </dependencyManagement>
 
-    <!--
-        Inclusion of repositories in POMs is controversial, to say the least.
-        It would be best if you proxied the Adobe repository using a Maven
-        Repository Manager. Once you do that, remove these sections.
-     -->
-    
     <build>
         <plugins>
             <plugin>
