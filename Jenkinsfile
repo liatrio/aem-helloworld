@@ -1,13 +1,25 @@
 pipeline {
-    agent any
-    tools {
-        maven 'Maven'
-    }
+    agent none
     stages {
         stage ('Build') {
+            agent {
+                docker {
+                    image 'alpine'
+                }
+            }
             steps {
-                git 'https://github.com/shinesolutions/aem-helloworld.git'
                 sh 'mvn clean install'
+            }
+        }
+        stage (Selenium) {
+            agent {
+                docker {
+                    image 'liatrio/selenium-firefox'
+                    args '--network=plumbing_default'
+                }
+            }
+            steps {
+                sh 'ruby tests_spec.rb'
             }
         }
     }
