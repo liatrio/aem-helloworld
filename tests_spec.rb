@@ -2,7 +2,7 @@ require 'headless'
 require 'selenium-webdriver'
 require 'minitest/autorun'
 
-describe 'Petlinic' do
+describe 'AEM Hello World' do
   before do
     @headless = Headless.new
     @headless.start
@@ -27,7 +27,7 @@ describe 'Petlinic' do
     it 'should show correct page title' do
       # wait for the page
       @driver.find_element(:css, '.parbase.section.text')
-      
+
       assert @driver.title == 'Hello World'
     end
   end
