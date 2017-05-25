@@ -1,5 +1,6 @@
 pipeline {
     agent none
+    def pom = readMavenPom
     stages {
         stage ('Build') {
             agent {
@@ -11,7 +12,6 @@ pipeline {
                 sh 'mvn install -B'
             }
         }
-        def pom = readMavenPom
         stage ('Selenium') {
             agent {
                 docker {
