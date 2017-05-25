@@ -19,11 +19,7 @@ pipeline {
                 }
             }
             steps {
-
-                def project = new XmlSlurper().parseText(readFile('pom.xml'))
-                def version = project.version.text()
-                println "version is: ${version}"
-
+                def pom = readMavenPom
                 sh 'curl -u admin:admin -F install=true -F file=@"content/target/aem-helloworld-content-0.0.2-SNAPSHOT.zip" http://aem:4502/crx/packmgr/service.jsp'
                 sh 'ruby tests_spec.rb'
             }
